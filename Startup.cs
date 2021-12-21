@@ -23,10 +23,10 @@ namespace ReleaseWebServer
 
             
             applicationBuilder.UseExceptionHandler(ERROR_PAGE_PATH);
-            applicationBuilder.UseHsts();
+            //applicationBuilder.UseHsts();
             
 
-            applicationBuilder.UseHttpsRedirection();
+            //applicationBuilder.UseHttpsRedirection();
 
             applicationBuilder.UseRewriter(
                 new RewriteOptions().Add(
