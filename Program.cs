@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +19,7 @@ namespace ReleaseWebServer
 
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
-                .UseKestrel()
+                .UseKestrel(/*options => options.Listen(IPAddress.Any, 80)*/)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
